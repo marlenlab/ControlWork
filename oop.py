@@ -1,10 +1,12 @@
 class Person:
+
+
     def __init__(self):
         self._age = 0  # начальное значение
 
     def set_age(self, age):
         if age < 0:
-            print("Ошибка: возраст не может быть отрицательным!")
+            raise ValueError("Возраст не может быть отрицательным")
         else:
             self._age = age
 
@@ -22,22 +24,28 @@ p.set_age(-5)  # Ошибка
 
 
 class Animal:
+
+
     def __init__(self, name):
         self.name = name
 
     def speak(self):
-        return "I am {name}  an animal"
+        return f"I am {self.name} an animal"
 
 class Dog(Animal):
+
+
     def __init__(self, name):
-        Animal.__init__(self, name)
+        super().__init__(name)
 
     def speak(self):
         return "Woof"
 
 class Cat(Animal):
+
+
     def __init__(self, name):
-        Animal.__init__(self, name)
+        super().__init__(name)
 
     def speak(self):
         return "Meow"
@@ -51,16 +59,19 @@ print(cat.name, cat.speak())  # Вывод: Kitty Meow
 
 
 class Vehicle:
+
     def move(self):
         return "Vehicle is moving"
 
 
 class Car(Vehicle):
+
     def move(self):
         return "Car is driving"
 
 
 class Bicycle(Vehicle):
+
     def move(self):
         return "Bicycle is pedaling"
 
