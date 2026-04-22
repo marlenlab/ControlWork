@@ -1,6 +1,8 @@
 .idea
 __pycache__
 .venv
-.myvenv
+venv
 #.venv
 env
+my_venv
+.idea/
